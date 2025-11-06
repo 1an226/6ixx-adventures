@@ -1,31 +1,3 @@
-/* DEBUGGING STYLES - TEMPORARY */
-body::before {
-    content: "🎉 CSS IS LOADING! If you see this, CSS is working! 🎉";
-    display: block;
-    background: #ff0000;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    border-bottom: 5px solid yellow;
-}
-
-body {
-    border: 10px solid green !important;
-}
-
-.navbar {
-    background: purple !important;
-    border: 5px solid orange !important;
-}
-/* END DEBUGGING STYLES */
-
 * {
     margin: 0;
     padding: 0;
@@ -354,34 +326,6 @@ body {
 .activity-text {
     font-weight: 600;
     color: var(--text-dark);
-}
-
-.sticker-features {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 2.5rem 0;
-    flex-wrap: wrap;
-}
-
-.sticker-feature {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    color: var(--white);
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: var(--transition);
-}
-
-.sticker-feature:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
 }
 
 .hero-buttons {
@@ -1294,15 +1238,6 @@ body {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-    }
-
-    .sticker-features {
-        gap: 1rem;
-    }
-
-    .sticker-feature {
-        font-size: 0.9rem;
-        padding: 10px 15px;
     }
 
     .countdown {
