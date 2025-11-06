@@ -1,3 +1,31 @@
+/* DEBUGGING STYLES - TEMPORARY */
+body::before {
+    content: "🎉 CSS IS LOADING! If you see this, CSS is working! 🎉";
+    display: block;
+    background: #ff0000;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    border-bottom: 5px solid yellow;
+}
+
+body {
+    border: 10px solid green !important;
+}
+
+.navbar {
+    background: purple !important;
+    border: 5px solid orange !important;
+}
+/* END DEBUGGING STYLES */
+
 * {
     margin: 0;
     padding: 0;
