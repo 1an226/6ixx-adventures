@@ -179,16 +179,24 @@ function bookWhistlingMorans() {
             <p><strong>Time:</strong> Meet at 4:00 PM</p>
             <p><strong>Location:</strong> Whistling Moran - Mombasa Rd</p>
             <p><strong>Price:</strong> Ksh 1,999</p>
+            <div class="payment-info">
+                <h4>Payment Details:</h4>
+                <p><i class="fas fa-mobile-alt"></i> <strong>M-Pesa: 0707388274</strong></p>
+                <p>Account Name: <strong>Edison</strong></p>
+            </div>
             <div class="event-activities">
-                <h4>Activities Included:</h4>
+                <h4>Inclusive Activities:</h4>
                 <ul>
-                    <li>Swimming Pool Access</li>
-                    <li>Live DJ Performance</li>
-                    <li>Premium Drinks & Liquor</li>
-                    <li>Transport To & From</li>
-                    <li>Horse Riding</li>
-                    <li>Carting</li>
-                    <li>Drifting</li>
+                    <li><i class="fas fa-swimming-pool"></i> Swimming Pool Access</li>
+                    <li><i class="fas fa-music"></i> Live DJ Performance</li>
+                    <li><i class="fas fa-cocktail"></i> Premium Drinks & Liquor</li>
+                    <li><i class="fas fa-bus"></i> Transport To & From Venue</li>
+                </ul>
+                <h4>Exclusive Activities:</h4>
+                <ul>
+                    <li><i class="fas fa-horse"></i> Horse Riding</li>
+                    <li><i class="fas fa-car"></i> Carting</li>
+                    <li><i class="fas fa-tachometer-alt"></i> Drifting</li>
                 </ul>
             </div>
             <div class="modal-actions">
@@ -219,7 +227,17 @@ function bookWhistlingMorans() {
         border-radius: 15px;
         max-width: 500px;
         width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
         animation: slideInUp 0.3s ease;
+    `;
+
+    modal.querySelector('.payment-info').style.cssText = `
+        background: var(--background-light);
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        text-align: center;
     `;
 
     modal.querySelector('.cancel-btn').style.cssText = `
@@ -230,6 +248,7 @@ function bookWhistlingMorans() {
         border-radius: 5px;
         cursor: pointer;
         margin-right: 1rem;
+        font-weight: 600;
     `;
 
     modal.querySelector('.confirm-btn').style.cssText = `
@@ -239,6 +258,7 @@ function bookWhistlingMorans() {
         padding: 12px 25px;
         border-radius: 5px;
         cursor: pointer;
+        font-weight: 600;
     `;
 
     // Add event listeners
@@ -247,7 +267,7 @@ function bookWhistlingMorans() {
     });
 
     modal.querySelector('.confirm-btn').addEventListener('click', () => {
-        alert(`Booking confirmed for The Avinas Adventures Pool Party! We'll contact you soon with meeting details.`);
+        showNotification('Booking confirmed! We will contact you shortly with meeting details.', 'success');
         modal.remove();
     });
 
@@ -261,12 +281,20 @@ function bookWhistlingMorans() {
     document.body.appendChild(modal);
 }
 
+// Payment instructions modal
 function showPaymentInstructions() {
     const modal = document.createElement('div');
     modal.className = 'payment-modal';
     modal.innerHTML = `
         <div class="modal-content">
-            <h3>Payment Instructions</h3>
+            <h3><i class="fas fa-credit-card"></i> Payment Instructions</h3>
+            <div class="payment-summary">
+                <div class="amount">Amount: <strong>Ksh 1,999</strong></div>
+                <div class="mpesa-details">
+                    <p><i class="fas fa-mobile-alt"></i> <strong>M-Pesa: 0707388274</strong></p>
+                    <p>Account Name: <strong>Edison</strong></p>
+                </div>
+            </div>
             <div class="instructions">
                 <div class="step">
                     <div class="step-number">1</div>
@@ -281,7 +309,7 @@ function showPaymentInstructions() {
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h4>Confirmation</h4>
-                        <p>Screenshot the payment confirmation message</p>
+                        <p>Screenshot the payment confirmation message from M-Pesa</p>
                     </div>
                 </div>
                 <div class="step">
@@ -289,18 +317,24 @@ function showPaymentInstructions() {
                     <div class="step-content">
                         <h4>Send Details</h4>
                         <p>Send the screenshot to <strong>0707388274</strong> via WhatsApp</p>
+                        <p><em>Include your full name for identification</em></p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h4>Receive Confirmation</h4>
-                        <p>You'll get event details and meeting point information</p>
+                        <p>You'll receive event details and meeting point information within 24 hours</p>
                     </div>
                 </div>
             </div>
+            <div class="contact-note">
+                <p><i class="fas fa-phone"></i> <strong>For Booking & Inquiries: 0707388274</strong></p>
+            </div>
             <div class="modal-actions">
-                <button class="modal-btn" onclick="this.closest('.payment-modal').remove()">Got It!</button>
+                <button class="modal-btn" onclick="this.closest('.payment-modal').remove()">
+                    <i class="fas fa-check"></i> Got It!
+                </button>
             </div>
         </div>
     `;
@@ -329,6 +363,57 @@ function showPaymentInstructions() {
         max-height: 80vh;
         overflow-y: auto;
     `;
+
+    modal.querySelector('.payment-summary').style.cssText = `
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        text-align: center;
+    `;
+
+    modal.querySelector('.amount').style.cssText = `
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    `;
+
+    modal.querySelector('.mpesa-number').style.cssText = `
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+        color: var(--accent-color);
+    `;
+
+    modal.querySelector('.contact-note').style.cssText = `
+        background: var(--background-light);
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        text-align: center;
+        border-left: 4px solid var(--secondary-color);
+    `;
+
+    modal.querySelector('.modal-btn').style.cssText = `
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition);
+        width: 100%;
+        font-size: 1.1rem;
+    `;
+
+    modal.querySelector('.modal-btn').addEventListener('mouseenter', function() {
+        this.style.background = 'var(--secondary-color)';
+    });
+
+    modal.querySelector('.modal-btn').addEventListener('mouseleave', function() {
+        this.style.background = 'var(--primary-color)';
+    });
 
     document.body.appendChild(modal);
 
@@ -413,6 +498,15 @@ notificationStyles.textContent = `
         padding: 2rem;
         border-radius: 15px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    :root {
+        --primary-color: #2c5530;
+        --secondary-color: #ff6b35;
+        --accent-color: #f4a261;
+        --background-light: #f8f9fa;
+        --white: #ffffff;
+        --transition: all 0.3s ease;
     }
 `;
 document.head.appendChild(notificationStyles);
