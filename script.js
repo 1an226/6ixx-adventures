@@ -116,9 +116,16 @@ function showDestination(type) {
     }
 }
 
-// Whistling Morans Countdown - Real-time to November 8, 2024 4:00 PM
+// Scroll to details function
+function scrollToDetails() {
+    document.getElementById('eventDetails').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+// Whistling Morans Countdown - Real-time to November 9, 2025 4:00 PM
 function updateCountdown() {
-    const eventDate = new Date('November 8, 2024 16:00:00 GMT+0300'); // 4PM East Africa Time
+    const eventDate = new Date('November 9, 2025 16:00:00 GMT+0300'); // 4PM East Africa Time
     const now = new Date();
     const distance = eventDate - now;
 
@@ -147,7 +154,7 @@ function updateCountdown() {
             countdownEl.innerHTML = `
                 <div class="event-started">
                     <h3 style="color: var(--secondary-color); margin-bottom: 1rem; font-size: 2rem;">🎉 Event Starting Soon! 🎉</h3>
-                    <p style="font-size: 1.2rem;">Get ready for an amazing time at Whistling Morans!</p>
+                    <p style="font-size: 1.2rem;">Get ready for an amazing Pool Party at Whistling Moran!</p>
                 </div>
             `;
         }
@@ -156,7 +163,7 @@ function updateCountdown() {
 
 // Initialize countdown
 let countdownTimer;
-if (document.querySelector('.whistling-hero')) {
+if (document.querySelector('.sticker-hero')) {
     updateCountdown();
     countdownTimer = setInterval(updateCountdown, 1000);
 }
@@ -167,18 +174,21 @@ function bookWhistlingMorans() {
     modal.className = 'booking-modal';
     modal.innerHTML = `
         <div class="modal-content">
-            <h3>Book Whistling Morans Pool Party</h3>
-            <p><strong>Date:</strong> November 8th, 2024</p>
+            <h3>Book The Avinas Adventures Pool Party</h3>
+            <p><strong>Date:</strong> November 9th, 2025</p>
             <p><strong>Time:</strong> Meet at 4:00 PM</p>
-            <p><strong>Location:</strong> Along Mombasa Road</p>
+            <p><strong>Location:</strong> Whistling Moran - Mombasa Rd</p>
             <p><strong>Price:</strong> Ksh 1,999</p>
             <div class="event-activities">
                 <h4>Activities Included:</h4>
                 <ul>
-                    <li>Pool Party Access</li>
+                    <li>Swimming Pool Access</li>
                     <li>Live DJ Performance</li>
                     <li>Premium Drinks & Liquor</li>
-                    <li>Professional Photography</li>
+                    <li>Transport To & From</li>
+                    <li>Horse Riding</li>
+                    <li>Carting</li>
+                    <li>Drifting</li>
                 </ul>
             </div>
             <div class="modal-actions">
@@ -237,7 +247,7 @@ function bookWhistlingMorans() {
     });
 
     modal.querySelector('.confirm-btn').addEventListener('click', () => {
-        alert(`Booking confirmed for Whistling Morans Pool Party! We'll contact you soon with meeting details.`);
+        alert(`Booking confirmed for The Avinas Adventures Pool Party! We'll contact you soon with meeting details.`);
         modal.remove();
     });
 
@@ -251,87 +261,84 @@ function bookWhistlingMorans() {
     document.body.appendChild(modal);
 }
 
-// Sticker functionality
-let currentSticker = '';
+function showPaymentInstructions() {
+    const modal = document.createElement('div');
+    modal.className = 'payment-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h3>Payment Instructions</h3>
+            <div class="instructions">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>M-Pesa Payment</h4>
+                        <p>Send <strong>Ksh 1,999</strong> to:</p>
+                        <div class="mpesa-number">0707388274</div>
+                        <p>Account Name: <strong>Edison</strong></p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Confirmation</h4>
+                        <p>Screenshot the payment confirmation message</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Send Details</h4>
+                        <p>Send the screenshot to <strong>0707388274</strong> via WhatsApp</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Receive Confirmation</h4>
+                        <p>You'll get event details and meeting point information</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn" onclick="this.closest('.payment-modal').remove()">Got It!</button>
+            </div>
+        </div>
+    `;
 
-function openStickerModal(stickerId) {
-    currentSticker = stickerId;
-    const modal = document.getElementById('stickerModal');
-    const modalImage = document.getElementById('modalStickerImage');
-    const modalTitle = document.getElementById('modalTitle');
-    
-    // Set modal content based on sticker
-    const stickers = {
-        'whistling-morans': {
-            image: 'images/whistling-morans-sticker.jpeg',
-            title: 'Whistling Morans Pool Party'
-        },
-        'mountain-trek': {
-            image: 'images/mountain-trek-sticker.jpeg',
-            title: 'Mountain Trek Adventure'
-        },
-        'beach-vibes': {
-            image: 'images/beach-vibes-sticker.jpeg',
-            title: 'Beach Vibes'
-        },
-        'safari-adventure': {
-            image: 'images/safari-adventure-sticker.jpeg',
-            title: 'Safari Adventure'
-        },
-        'kenya-explorer': {
-            image: 'images/kenya-explorer-sticker.jpeg',
-            title: 'Kenya Explorer'
-        },
-        'adventure-crew': {
-            image: 'images/adventure-crew-sticker.jpeg',
-            title: 'Adventure Crew'
+    // Add modal styles
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 20px;
+    `;
+
+    modal.querySelector('.modal-content').style.cssText = `
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        max-width: 500px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+    `;
+
+    document.body.appendChild(modal);
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
         }
-    };
-    
-    modalImage.src = stickers[stickerId].image;
-    modalTitle.textContent = stickers[stickerId].title;
-    modal.classList.add('active');
+    });
 }
-
-function closeStickerModal() {
-    document.getElementById('stickerModal').classList.remove('active');
-}
-
-function downloadSticker(stickerId) {
-    // In a real implementation, this would trigger file download
-    showNotification(`Downloading ${stickerId.replace('-', ' ')} sticker!`, 'success');
-    // You would typically have: window.location.href = `stickers/${stickerId}.png`;
-    
-    // Simulate download delay
-    setTimeout(() => {
-        showNotification('Sticker downloaded successfully!', 'success');
-    }, 1000);
-}
-
-function shareSticker(stickerId) {
-    if (navigator.share) {
-        navigator.share({
-            title: '6ixx Adventures Sticker',
-            text: 'Check out this awesome adventure sticker from 6ixx Adventures!',
-            url: window.location.href
-        });
-    } else {
-        // Fallback for browsers that don't support Web Share API
-        showNotification('Share this sticker with your friends! Copy the link: ' + window.location.href, 'info');
-    }
-}
-
-// Close sticker modal when clicking outside
-document.addEventListener('DOMContentLoaded', function() {
-    const stickerModal = document.getElementById('stickerModal');
-    if (stickerModal) {
-        stickerModal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeStickerModal();
-            }
-        });
-    }
-});
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -412,7 +419,7 @@ document.head.appendChild(notificationStyles);
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('6ixx Adventures website loaded successfully!');
+    console.log('The Avinas Adventures website loaded successfully!');
 
     // Add loading animation removal
     setTimeout(() => {
