@@ -38,7 +38,7 @@ function subscribeNewsletter(event) {
     event.preventDefault();
     const form = event.target;
     const email = form.querySelector('input[type="email"]').value;
-    
+
     // Simulate API call
     showNotification(`Thank you for subscribing with: ${email}`, 'success');
     form.reset();
@@ -53,7 +53,7 @@ function showNotification(message, type = 'info') {
         <span>${message}</span>
         <button onclick="this.parentElement.remove()">&times;</button>
     `;
-    
+
     // Add styles
     notification.style.cssText = `
         position: fixed;
@@ -70,9 +70,9 @@ function showNotification(message, type = 'info') {
         gap: 15px;
         animation: slideInRight 0.3s ease;
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentElement) {
@@ -105,7 +105,7 @@ function showDestination(type) {
             description: 'Connect with nature in pristine wilderness areas.'
         }
     };
-    
+
     const dest = destinations[type];
     if (dest) {
         showNotification(`Exploring ${dest.name} - $${dest.price}`, 'info');
@@ -187,7 +187,7 @@ function bookWhistlingMorans() {
             </div>
         </div>
     `;
-    
+
     // Add modal styles
     modal.style.cssText = `
         position: fixed;
@@ -202,7 +202,7 @@ function bookWhistlingMorans() {
         z-index: 10000;
         animation: fadeIn 0.3s ease;
     `;
-    
+
     modal.querySelector('.modal-content').style.cssText = `
         background: white;
         padding: 2rem;
@@ -211,7 +211,7 @@ function bookWhistlingMorans() {
         width: 90%;
         animation: slideInUp 0.3s ease;
     `;
-    
+
     modal.querySelector('.cancel-btn').style.cssText = `
         background: #ccc;
         color: #333;
@@ -221,7 +221,7 @@ function bookWhistlingMorans() {
         cursor: pointer;
         margin-right: 1rem;
     `;
-    
+
     modal.querySelector('.confirm-btn').style.cssText = `
         background: var(--primary-color);
         color: white;
@@ -230,26 +230,108 @@ function bookWhistlingMorans() {
         border-radius: 5px;
         cursor: pointer;
     `;
-    
+
     // Add event listeners
     modal.querySelector('.cancel-btn').addEventListener('click', () => {
         modal.remove();
     });
-    
+
     modal.querySelector('.confirm-btn').addEventListener('click', () => {
         alert(`Booking confirmed for Whistling Morans Pool Party! We'll contact you soon with meeting details.`);
         modal.remove();
     });
-    
+
     // Close modal when clicking outside
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.remove();
         }
     });
-    
+
     document.body.appendChild(modal);
 }
+
+// Sticker functionality
+let currentSticker = '';
+
+function openStickerModal(stickerId) {
+    currentSticker = stickerId;
+    const modal = document.getElementById('stickerModal');
+    const modalImage = document.getElementById('modalStickerImage');
+    const modalTitle = document.getElementById('modalTitle');
+    
+    // Set modal content based on sticker
+    const stickers = {
+        'whistling-morans': {
+            image: 'images/whistling-morans-sticker.jpeg',
+            title: 'Whistling Morans Pool Party'
+        },
+        'mountain-trek': {
+            image: 'images/mountain-trek-sticker.jpeg',
+            title: 'Mountain Trek Adventure'
+        },
+        'beach-vibes': {
+            image: 'images/beach-vibes-sticker.jpeg',
+            title: 'Beach Vibes'
+        },
+        'safari-adventure': {
+            image: 'images/safari-adventure-sticker.jpeg',
+            title: 'Safari Adventure'
+        },
+        'kenya-explorer': {
+            image: 'images/kenya-explorer-sticker.jpeg',
+            title: 'Kenya Explorer'
+        },
+        'adventure-crew': {
+            image: 'images/adventure-crew-sticker.jpeg',
+            title: 'Adventure Crew'
+        }
+    };
+    
+    modalImage.src = stickers[stickerId].image;
+    modalTitle.textContent = stickers[stickerId].title;
+    modal.classList.add('active');
+}
+
+function closeStickerModal() {
+    document.getElementById('stickerModal').classList.remove('active');
+}
+
+function downloadSticker(stickerId) {
+    // In a real implementation, this would trigger file download
+    showNotification(`Downloading ${stickerId.replace('-', ' ')} sticker!`, 'success');
+    // You would typically have: window.location.href = `stickers/${stickerId}.png`;
+    
+    // Simulate download delay
+    setTimeout(() => {
+        showNotification('Sticker downloaded successfully!', 'success');
+    }, 1000);
+}
+
+function shareSticker(stickerId) {
+    if (navigator.share) {
+        navigator.share({
+            title: '6ixx Adventures Sticker',
+            text: 'Check out this awesome adventure sticker from 6ixx Adventures!',
+            url: window.location.href
+        });
+    } else {
+        // Fallback for browsers that don't support Web Share API
+        showNotification('Share this sticker with your friends! Copy the link: ' + window.location.href, 'info');
+    }
+}
+
+// Close sticker modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const stickerModal = document.getElementById('stickerModal');
+    if (stickerModal) {
+        stickerModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeStickerModal();
+            }
+        });
+    }
+});
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -331,7 +413,7 @@ document.head.appendChild(notificationStyles);
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     console.log('6ixx Adventures website loaded successfully!');
-    
+
     // Add loading animation removal
     setTimeout(() => {
         document.body.style.opacity = '1';
