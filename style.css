@@ -140,7 +140,7 @@ body {
 }
 
 .sticker-content {
-    max-width: 800px;
+    max-width: 900px;
     padding: 2rem;
     animation: fadeInUp 1s ease;
 }
@@ -203,129 +203,106 @@ body {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
-/* MPESA Payment Line */
-.mpesa-payment-line {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--primary-color);
+.mpesa-info {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: var(--white);
     padding: 15px 25px;
-    border-radius: 10px;
-    margin: 1.5rem 0;
-    font-weight: 700;
-    font-size: 1.2rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    border: 2px solid var(--secondary-color);
-}
-
-.mpesa-payment-line i {
-    color: var(--secondary-color);
-    font-size: 1.4rem;
-}
-
-/* Two-Column Activities Section */
-.activities-section {
-    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
-    padding: 2rem;
-    margin: 2rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border: 2px solid var(--white);
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.mpesa-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Activities Section - Two Columns */
+.activities-section {
+    margin: 2.5rem 0;
 }
 
 .activities-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-top: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .activity-column {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     padding: 1.5rem;
-    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: var(--transition);
 }
 
-.activity-column.inclusive {
-    background: linear-gradient(135deg, rgba(44, 85, 48, 0.1), rgba(44, 85, 48, 0.05));
-    border-left: 4px solid var(--primary-color);
+.activity-column:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
 }
 
-.activity-column.exclusive {
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
-    border-left: 4px solid var(--secondary-color);
-}
-
-.column-header {
+.activity-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.column-header i {
+.activity-header i {
     font-size: 1.5rem;
 }
 
-.column-header.inclusive i {
-    color: var(--primary-color);
+.activity-column.inclusive .activity-header i {
+    color: #4CAF50;
 }
 
-.column-header.exclusive i {
-    color: var(--secondary-color);
+.activity-column.exclusive .activity-header i {
+    color: #FFD700;
 }
 
-.column-header h3 {
+.activity-header h3 {
     font-size: 1.3rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-.column-header.inclusive h3 {
-    color: var(--primary-color);
-}
-
-.column-header.exclusive h3 {
-    color: var(--secondary-color);
+    margin: 0;
 }
 
 .activity-list {
     list-style: none;
+    text-align: left;
 }
 
-.activity-item {
+.activity-list li {
     padding: 0.8rem 0;
     display: flex;
     align-items: center;
     gap: 12px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    transition: var(--transition);
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.activity-item:last-child {
+.activity-list li:last-child {
     border-bottom: none;
 }
 
-.activity-item:hover {
-    transform: translateX(5px);
-}
-
-.activity-item i {
-    color: var(--secondary-color);
+.activity-list li i {
     width: 20px;
-    font-size: 1.1rem;
-}
-
-.activity-item.inclusive i {
-    color: var(--primary-color);
-}
-
-.activity-text {
-    font-weight: 600;
-    color: var(--text-dark);
+    color: var(--accent-color);
 }
 
 .hero-buttons {
@@ -1240,6 +1217,15 @@ body {
         align-items: center;
     }
 
+    .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .activity-column {
+        padding: 1.2rem;
+    }
+
     .countdown {
         gap: 1rem;
     }
@@ -1251,16 +1237,6 @@ body {
 
     .countdown-item span {
         font-size: 2rem;
-    }
-
-    .activities-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .activities-section {
-        padding: 1.5rem;
-        margin: 1.5rem 0;
     }
 
     .newsletter-form {
@@ -1332,10 +1308,5 @@ body {
         right: 10px;
         left: 10px;
         top: 90px;
-    }
-
-    .mpesa-payment-line {
-        font-size: 1rem;
-        padding: 12px 20px;
     }
 }
