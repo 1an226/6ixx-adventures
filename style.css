@@ -203,6 +203,131 @@ body {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
+/* MPESA Payment Line */
+.mpesa-payment-line {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color);
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 2px solid var(--secondary-color);
+}
+
+.mpesa-payment-line i {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+}
+
+/* Two-Column Activities Section */
+.activities-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 2px solid var(--white);
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.activity-column {
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.activity-column.inclusive {
+    background: linear-gradient(135deg, rgba(44, 85, 48, 0.1), rgba(44, 85, 48, 0.05));
+    border-left: 4px solid var(--primary-color);
+}
+
+.activity-column.exclusive {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
+    border-left: 4px solid var(--secondary-color);
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.column-header i {
+    font-size: 1.5rem;
+}
+
+.column-header.inclusive i {
+    color: var(--primary-color);
+}
+
+.column-header.exclusive i {
+    color: var(--secondary-color);
+}
+
+.column-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.column-header.inclusive h3 {
+    color: var(--primary-color);
+}
+
+.column-header.exclusive h3 {
+    color: var(--secondary-color);
+}
+
+.activity-list {
+    list-style: none;
+}
+
+.activity-item {
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item:hover {
+    transform: translateX(5px);
+}
+
+.activity-item i {
+    color: var(--secondary-color);
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+.activity-item.inclusive i {
+    color: var(--primary-color);
+}
+
+.activity-text {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
 .sticker-features {
     display: flex;
     justify-content: center;
@@ -1071,7 +1196,7 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0;
-width: 20px;
+    width: 20px;
     height: 20px;
     display: flex;
     align-items: center;
@@ -1165,6 +1290,16 @@ width: 20px;
         font-size: 2rem;
     }
 
+    .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .activities-section {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
     .newsletter-form {
         flex-direction: column;
     }
@@ -1235,6 +1370,9 @@ width: 20px;
         left: 10px;
         top: 90px;
     }
-}
-```
 
+    .mpesa-payment-line {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
