@@ -109,7 +109,7 @@ body {
     transition: var(--transition);
 }
 
-/* Professional Sticker Hero Section */
+/* Professional Sticker Hero Section - FIXED */
 .hero.sticker-hero {
     background: url('images/whistling-morans-view.jpeg') center/cover no-repeat;
     background-size: cover;
@@ -143,6 +143,8 @@ body {
     max-width: 900px;
     padding: 2rem;
     animation: fadeInUp 1s ease;
+    position: relative;
+    z-index: 10;
 }
 
 .sticker-badge {
@@ -166,6 +168,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     opacity: 0.9;
+    display: block !important;
 }
 
 .sticker-title {
@@ -177,23 +180,27 @@ body {
     text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
     color: #ffd700;
     line-height: 1.1;
+    display: block !important;
 }
 
 .sticker-details {
     margin: 1.5rem 0;
     font-size: 1.3rem;
     font-weight: 600;
+    display: block !important;
 }
 
 .sticker-venue {
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    display: block !important;
 }
 
 .sticker-date {
     opacity: 0.9;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     font-size: 1.2rem;
+    display: block !important;
 }
 
 /* Countdown Styles - Moved above price */
@@ -236,9 +243,10 @@ body {
     margin: 1rem 0;
     color: var(--white);
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    display: block !important;
 }
 
-/* M-PESA Info with dark background */
+/* M-PESA Info with dark background - FIXED */
 .mpesa-info-dark {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
@@ -257,16 +265,18 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    color: var(--white) !important; /* Force white text */
 }
 
-/* Activities Section - Two Columns */
+/* Activities Section - Two Columns - FIXED */
 .activities-section {
     margin: 2rem 0;
+    display: block !important;
 }
 
 .activities-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 1.5rem;
     max-width: 650px;
     margin: 0 auto;
@@ -280,6 +290,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     transition: var(--transition);
+    display: block !important;
 }
 
 .activity-column:hover {
@@ -340,6 +351,8 @@ body {
     width: 18px;
     color: var(--accent-color);
 }
+
+/* REMOVED: Hero buttons section since Book Now was removed */
 
 /* Event Details Section */
 .event-details {
@@ -444,7 +457,8 @@ body {
     margin: 1rem 0;
 }
 
-.mpesa-info-dark {
+/* Fixed M-PESA info in payment section */
+.payment-details .mpesa-info-dark {
     background: var(--background-light);
     padding: 1.5rem;
     border-radius: 10px;
@@ -452,13 +466,13 @@ body {
     border-left: 4px solid var(--primary-color);
 }
 
-.mpesa-info-dark p {
+.payment-details .mpesa-info-dark p {
     margin: 0.5rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: var(--text-dark);
+    color: var(--text-dark) !important; /* Dark text for better contrast */
 }
 
 .contact-info {
