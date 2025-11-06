@@ -35,14 +35,14 @@
             <h1>Whistling Morans Pool Party</h1>
             <p class="event-date">November 8th, 2024 • Meet at 4PM • Along Mombasa Road</p>
             <p class="event-description">Join us for an unforgettable evening of Pool Party, Live DJ, Premium Drinks & Photography</p>
-            
+
             <div class="event-features">
                 <span class="feature-tag"><i class="fas fa-swimming-pool"></i> Pool Party</span>
                 <span class="feature-tag"><i class="fas fa-music"></i> Live DJ</span>
                 <span class="feature-tag"><i class="fas fa-cocktail"></i> Premium Drinks</span>
                 <span class="feature-tag"><i class="fas fa-camera"></i> Photography</span>
             </div>
-            
+
             <div class="hero-buttons">
                 <button class="cta-button primary" onclick="bookWhistlingMorans()">
                     <i class="fas fa-ticket-alt"></i> Book Now - Ksh 1,999
@@ -51,7 +51,7 @@
                     <i class="fab fa-instagram"></i> View on Instagram
                 </a>
             </div>
-            
+
             <div class="countdown" id="countdown">
                 <div class="countdown-item">
                     <span id="days">00</span>
@@ -93,7 +93,7 @@
                         <button class="book-btn" onclick="showDestination('mountain')">Explore</button>
                     </div>
                 </div>
-                
+
                 <div class="destination-card">
                     <div class="card-image">
                         <img src="images/sarova-whitesands-view.jpeg" alt="Sarova Whitesands - Mombasa">
@@ -108,7 +108,7 @@
                         <button class="book-btn" onclick="showDestination('beach')">Explore</button>
                     </div>
                 </div>
-                
+
                 <div class="destination-card">
                     <div class="card-image">
                         <img src="images/salt-lick-view.jpeg" alt="Salt Lick Safari Lodge - Taita">
@@ -121,6 +121,127 @@
                             <span class="duration"><i class="fas fa-clock"></i> 2 days</span>
                         </div>
                         <button class="book-btn" onclick="showDestination('camping')">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stickers Section -->
+    <section class="stickers-section">
+        <div class="stickers-container">
+            <div class="stickers-header">
+                <h2>6ixx Adventures Stickers</h2>
+                <p>Collect and share our exclusive adventure stickers. Perfect for social media, messages, and showing your love for Kenyan adventures!</p>
+            </div>
+            
+            <div class="stickers-grid">
+                <div class="sticker-item" onclick="openStickerModal('whistling-morans')">
+                    <div class="sticker-image">
+                        <img src="images/whistling-morans-sticker.jpeg" alt="Whistling Morans Sticker">
+                        <div class="sticker-badge">NEW</div>
+                    </div>
+                    <div class="sticker-content">
+                        <h3>Whistling Morans</h3>
+                        <p>Pool Party Edition - Nov 8 Event</p>
+                        <div class="sticker-actions">
+                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('whistling-morans')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('whistling-morans')">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticker-item" onclick="openStickerModal('mountain-trek')">
+                    <div class="sticker-image">
+                        <img src="images/mountain-trek-sticker.jpeg" alt="Mountain Trek Sticker">
+                    </div>
+                    <div class="sticker-content">
+                        <h3>Mountain Trek</h3>
+                        <p>Conquer the peaks of Kenya</p>
+                        <div class="sticker-actions">
+                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('mountain-trek')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('mountain-trek')">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticker-item" onclick="openStickerModal('beach-vibes')">
+                    <div class="sticker-image">
+                        <img src="images/beach-vibes-sticker.jpeg" alt="Beach Vibes Sticker">
+                    </div>
+                    <div class="sticker-content">
+                        <h3>Beach Vibes</h3>
+                        <p>Kenyan coastal adventures</p>
+                        <div class="sticker-actions">
+                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('beach-vibes')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('beach-vibes')">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticker-item" onclick="openStickerModal('safari-adventure')">
+                    <div class="sticker-image">
+                        <img src="images/safari-adventure-sticker.jpeg" alt="Safari Adventure Sticker">
+                    </div>
+                    <div class="sticker-content">
+                        <h3>Safari Adventure</h3>
+                        <p>Wildlife and wilderness experiences</p>
+                        <div class="sticker-actions">
+                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('safari-adventure')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('safari-adventure')">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticker-item" onclick="openStickerModal('kenya-explorer')">
+                    <div class="sticker-image">
+                        <img src="images/kenya-explorer-sticker.jpeg" alt="Kenya Explorer Sticker">
+                    </div>
+                    <div class="sticker-content">
+                        <h3>Kenya Explorer</h3>
+                        <p>Discover the beauty of Kenya</p>
+                        <div class="sticker-actions">
+                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('kenya-explorer')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('kenya-explorer')">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticker-item" onclick="openStickerModal('adventure-crew')">
+                    <div class="sticker-image">
+                        <img src="images/adventure-crew-sticker.jpeg" alt="Adventure Crew Sticker">
+                    </div>
+                    <div class="sticker-content">
+                        <h3>Adventure Crew</h3>
+                        <p>Join the 6ixx adventure family</p>
+                        <div class="sticker-actions">
+                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('adventure-crew')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('adventure-crew')">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,6 +334,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Sticker Modal -->
+    <div class="sticker-modal" id="stickerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Sticker Preview</h3>
+                <button class="close-modal" onclick="closeStickerModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modalStickerImage" src="" alt="Sticker Preview" class="modal-sticker-image">
+                <div class="modal-actions">
+                    <button class="modal-btn primary" onclick="downloadSticker(currentSticker)">
+                        <i class="fas fa-download"></i> Download Sticker
+                    </button>
+                    <button class="modal-btn secondary" onclick="shareSticker(currentSticker)">
+                        <i class="fas fa-share"></i> Share Sticker
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
