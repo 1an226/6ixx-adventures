@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6ixx Adventures - Whistling Morans Event Nov 8</title>
+    <title>The Avinas Adventures - Pool Party at Whistling Moran</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -12,7 +12,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2><i class="fas fa-mountain"></i> 6ixx Adventures</h2>
+                <h2><i class="fas fa-umbrella-beach"></i> The Avinas Adventures</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -32,24 +32,24 @@
     <section class="hero whistling-hero">
         <div class="hero-content">
             <div class="event-badge">NEXT EVENT</div>
-            <h1>Whistling Morans Pool Party</h1>
-            <p class="event-date">November 8th, 2024 • Meet at 4PM • Along Mombasa Road</p>
-            <p class="event-description">Join us for an unforgettable evening of Pool Party, Live DJ, Premium Drinks & Photography</p>
+            <h1>POOL PARTY</h1>
+            <p class="event-date">November 9th, 2025 • This Saturday • Whistling Moran - Mombasa Rd</p>
+            <p class="event-description">Join The Avinas Adventures for an unforgettable pool party experience with premium amenities and exclusive activities</p>
 
             <div class="event-features">
-                <span class="feature-tag"><i class="fas fa-swimming-pool"></i> Pool Party</span>
+                <span class="feature-tag"><i class="fas fa-swimming-pool"></i> Swimming</span>
                 <span class="feature-tag"><i class="fas fa-music"></i> Live DJ</span>
-                <span class="feature-tag"><i class="fas fa-cocktail"></i> Premium Drinks</span>
-                <span class="feature-tag"><i class="fas fa-camera"></i> Photography</span>
+                <span class="feature-tag"><i class="fas fa-cocktail"></i> Drinks & Liquor</span>
+                <span class="feature-tag"><i class="fas fa-bus"></i> Transport</span>
             </div>
 
             <div class="hero-buttons">
                 <button class="cta-button primary" onclick="bookWhistlingMorans()">
                     <i class="fas fa-ticket-alt"></i> Book Now - Ksh 1,999
                 </button>
-                <a href="https://www.instagram.com/whistlingmorans/" target="_blank" class="cta-button instagram-btn">
-                    <i class="fab fa-instagram"></i> View on Instagram
-                </a>
+                <button class="cta-button secondary" onclick="scrollToStickers()">
+                    <i class="fas fa-download"></i> Download Event Sticker
+                </button>
             </div>
 
             <div class="countdown" id="countdown">
@@ -68,6 +68,59 @@
                 <div class="countdown-item">
                     <span id="seconds">00</span>
                     <small>Seconds</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="event-details">
+        <div class="container">
+            <h2>Event Details & Activities</h2>
+            <div class="details-grid">
+                <div class="detail-card inclusive">
+                    <div class="detail-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Inclusive Activities</h3>
+                    </div>
+                    <ul class="detail-list">
+                        <li><i class="fas fa-swimming-pool"></i> Swimming Pool Access</li>
+                        <li><i class="fas fa-music"></i> Live DJ Performance</li>
+                        <li><i class="fas fa-cocktail"></i> Premium Drinks & Liquor</li>
+                        <li><i class="fas fa-bus"></i> Transport To & From Venue</li>
+                    </ul>
+                </div>
+
+                <div class="detail-card exclusive">
+                    <div class="detail-header">
+                        <i class="fas fa-star"></i>
+                        <h3>Exclusive Activities</h3>
+                    </div>
+                    <ul class="detail-list">
+                        <li><i class="fas fa-horse"></i> Horse Riding</li>
+                        <li><i class="fas fa-car"></i> Carting</li>
+                        <li><i class="fas fa-tachometer-alt"></i> Drifting</li>
+                    </ul>
+                </div>
+
+                <div class="detail-card payment">
+                    <div class="detail-header">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Payment Information</h3>
+                    </div>
+                    <div class="payment-details">
+                        <div class="price">Ksh 1,999</div>
+                        <div class="mpesa-info">
+                            <p><strong>M-Pesa: 0707388274</strong></p>
+                            <p>Account Name: Edison</p>
+                        </div>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> For Booking & Inquiries: 0707388274</p>
+                        </div>
+                        <button class="payment-btn" onclick="showPaymentInstructions()">
+                            <i class="fas fa-info-circle"></i> Payment Instructions
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,120 +180,57 @@
         </div>
     </section>
 
-    <!-- Stickers Section -->
-    <section class="stickers-section">
-        <div class="stickers-container">
-            <div class="stickers-header">
-                <h2>6ixx Adventures Stickers</h2>
-                <p>Collect and share our exclusive adventure stickers. Perfect for social media, messages, and showing your love for Kenyan adventures!</p>
+    <!-- Professional Sticker Section -->
+    <section class="professional-sticker" id="stickerSection">
+        <div class="container">
+            <div class="sticker-header">
+                <h2>Share the Experience</h2>
+                <p>Download our premium event sticker and share the excitement on social media</p>
             </div>
             
-            <div class="stickers-grid">
-                <div class="sticker-item" onclick="openStickerModal('whistling-morans')">
-                    <div class="sticker-image">
-                        <img src="images/whistling-morans-sticker.jpeg" alt="Whistling Morans Sticker">
-                        <div class="sticker-badge">NEW</div>
-                    </div>
-                    <div class="sticker-content">
-                        <h3>Whistling Morans</h3>
-                        <p>Pool Party Edition - Nov 8 Event</p>
-                        <div class="sticker-actions">
-                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('whistling-morans')">
-                                <i class="fas fa-download"></i> Download
-                            </button>
-                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('whistling-morans')">
-                                <i class="fas fa-share"></i> Share
-                            </button>
+            <div class="sticker-container">
+                <div class="sticker-card">
+                    <div class="sticker-design">
+                        <div class="sticker-bg">
+                            <img src="images/whistling-morans-view.jpeg" alt="Whistling Moran Pool Party" class="sticker-image">
+                            <div class="sticker-overlay">
+                                <div class="sticker-brand">The Avinas Adventures</div>
+                                <div class="sticker-title">POOL PARTY</div>
+                                <div class="sticker-details">
+                                    <div class="sticker-date">Nov 9, 2025</div>
+                                    <div class="sticker-venue">Whistling Moran</div>
+                                </div>
+                                <div class="sticker-cta">Join the Experience!</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="sticker-item" onclick="openStickerModal('mountain-trek')">
-                    <div class="sticker-image">
-                        <img src="images/mountain-trek-sticker.jpeg" alt="Mountain Trek Sticker">
-                    </div>
-                    <div class="sticker-content">
-                        <h3>Mountain Trek</h3>
-                        <p>Conquer the peaks of Kenya</p>
-                        <div class="sticker-actions">
-                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('mountain-trek')">
-                                <i class="fas fa-download"></i> Download
+                    
+                    <div class="sticker-actions">
+                        <h3>Premium Event Sticker</h3>
+                        <p>High-quality design optimized for Instagram, WhatsApp, and social media</p>
+                        
+                        <div class="action-buttons">
+                            <button class="download-btn primary" onclick="downloadHighQualitySticker()">
+                                <i class="fas fa-download"></i> Download HD Sticker
                             </button>
-                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('mountain-trek')">
-                                <i class="fas fa-share"></i> Share
+                            <button class="download-btn secondary" onclick="shareStickerDirect()">
+                                <i class="fas fa-share-alt"></i> Share Directly
                             </button>
                         </div>
-                    </div>
-                </div>
-
-                <div class="sticker-item" onclick="openStickerModal('beach-vibes')">
-                    <div class="sticker-image">
-                        <img src="images/beach-vibes-sticker.jpeg" alt="Beach Vibes Sticker">
-                    </div>
-                    <div class="sticker-content">
-                        <h3>Beach Vibes</h3>
-                        <p>Kenyan coastal adventures</p>
-                        <div class="sticker-actions">
-                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('beach-vibes')">
-                                <i class="fas fa-download"></i> Download
-                            </button>
-                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('beach-vibes')">
-                                <i class="fas fa-share"></i> Share
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sticker-item" onclick="openStickerModal('safari-adventure')">
-                    <div class="sticker-image">
-                        <img src="images/safari-adventure-sticker.jpeg" alt="Safari Adventure Sticker">
-                    </div>
-                    <div class="sticker-content">
-                        <h3>Safari Adventure</h3>
-                        <p>Wildlife and wilderness experiences</p>
-                        <div class="sticker-actions">
-                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('safari-adventure')">
-                                <i class="fas fa-download"></i> Download
-                            </button>
-                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('safari-adventure')">
-                                <i class="fas fa-share"></i> Share
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sticker-item" onclick="openStickerModal('kenya-explorer')">
-                    <div class="sticker-image">
-                        <img src="images/kenya-explorer-sticker.jpeg" alt="Kenya Explorer Sticker">
-                    </div>
-                    <div class="sticker-content">
-                        <h3>Kenya Explorer</h3>
-                        <p>Discover the beauty of Kenya</p>
-                        <div class="sticker-actions">
-                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('kenya-explorer')">
-                                <i class="fas fa-download"></i> Download
-                            </button>
-                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('kenya-explorer')">
-                                <i class="fas fa-share"></i> Share
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sticker-item" onclick="openStickerModal('adventure-crew')">
-                    <div class="sticker-image">
-                        <img src="images/adventure-crew-sticker.jpeg" alt="Adventure Crew Sticker">
-                    </div>
-                    <div class="sticker-content">
-                        <h3>Adventure Crew</h3>
-                        <p>Join the 6ixx adventure family</p>
-                        <div class="sticker-actions">
-                            <button class="sticker-btn download" onclick="event.stopPropagation(); downloadSticker('adventure-crew')">
-                                <i class="fas fa-download"></i> Download
-                            </button>
-                            <button class="sticker-btn share" onclick="event.stopPropagation(); shareSticker('adventure-crew')">
-                                <i class="fas fa-share"></i> Share
-                            </button>
+                        
+                        <div class="sticker-features">
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Optimized for Social Media</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-expand"></i>
+                                <span>High Resolution (1080x1080px)</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-palette"></i>
+                                <span>Professional Design</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,18 +244,18 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <i class="fas fa-users"></i>
-                    <h3>680+</h3>
-                    <p>Happy Travelers</p>
+                    <h3>850+</h3>
+                    <p>Happy Adventurers</p>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-globe-americas"></i>
-                    <h3>9+</h3>
+                    <h3>12+</h3>
                     <p>Kenyan Destinations</p>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-calendar-check"></i>
-                    <h3>28+</h3>
-                    <p>Trips Organized</p>
+                    <h3>35+</h3>
+                    <p>Events Organized</p>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-award"></i>
@@ -295,8 +285,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-mountain"></i> 6ixx Adventures</h3>
-                    <p>Making Kenyan adventures accessible to everyone. Explore Kenya with confidence.</p>
+                    <h3><i class="fas fa-umbrella-beach"></i> The Avinas Adventures</h3>
+                    <p>Creating unforgettable Kenyan adventure experiences with premium amenities and exclusive activities.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.instagram.com/whistlingmorans/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -324,38 +314,121 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p><i class="fas fa-phone"></i> 0792274598</p>
-                    <p><i class="fas fa-envelope"></i> info6ixxadventures@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> K-Mall, Kangundo Rd - NAIROBI, Kenya</p>
+                    <p><i class="fas fa-phone"></i> 0707388274</p>
+                    <p><i class="fas fa-envelope"></i> avinasadventures@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 6ixx Adventures. All rights reserved. | Designed with <i class="fas fa-heart"></i> for Kenyan adventure</p>
+                <p>&copy; 2025 The Avinas Adventures. All rights reserved. | Designed with <i class="fas fa-heart"></i> for Kenyan adventure</p>
             </div>
         </div>
     </footer>
 
-    <!-- Sticker Modal -->
-    <div class="sticker-modal" id="stickerModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitle">Sticker Preview</h3>
-                <button class="close-modal" onclick="closeStickerModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <img id="modalStickerImage" src="" alt="Sticker Preview" class="modal-sticker-image">
-                <div class="modal-actions">
-                    <button class="modal-btn primary" onclick="downloadSticker(currentSticker)">
-                        <i class="fas fa-download"></i> Download Sticker
-                    </button>
-                    <button class="modal-btn secondary" onclick="shareSticker(currentSticker)">
-                        <i class="fas fa-share"></i> Share Sticker
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        // Sticker functionality
+        function scrollToStickers() {
+            document.getElementById('stickerSection').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function downloadHighQualitySticker() {
+            // Create a temporary anchor element for download
+            const link = document.createElement('a');
+            link.href = 'images/whistling-morans-view.jpeg';
+            link.download = 'Avinas-Adventures-Pool-Party-Sticker.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show confirmation
+            showNotification('Premium sticker downloaded successfully! Ready for social media sharing.', 'success');
+        }
+
+        function shareStickerDirect() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'The Avinas Adventures - Pool Party',
+                    text: 'Join us for an amazing Pool Party at Whistling Moran on November 9th, 2025!',
+                    url: window.location.href,
+                })
+                .then(() => showNotification('Event shared successfully!', 'success'))
+                .catch(error => showNotification('Sharing failed: ' + error, 'error'));
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                showNotification('Share this event: ' + window.location.href, 'info');
+            }
+        }
+
+        function showPaymentInstructions() {
+            const modal = document.createElement('div');
+            modal.className = 'payment-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h3>Payment Instructions</h3>
+                    <div class="instructions">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>M-Pesa Payment</h4>
+                                <p>Send <strong>Ksh 1,999</strong> to:</p>
+                                <div class="mpesa-number">0707388274</div>
+                                <p>Account Name: <strong>Edison</strong></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Confirmation</h4>
+                                <p>Screenshot the payment confirmation message</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Send Details</h4>
+                                <p>Send the screenshot to <strong>0707388274</strong> via WhatsApp</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Receive Confirmation</h4>
+                                <p>You'll get event details and meeting point information</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="modal-btn" onclick="this.closest('.payment-modal').remove()">Got It!</button>
+                    </div>
+                </div>
+            `;
+
+            // Add modal styles
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                padding: 20px;
+            `;
+
+            modal.querySelector('.modal-content').style.cssText = `
+                background: white;
+                padding: 2rem;
+                border-radius: 15px;
+                max-width: 500px;
+                width: 100%;
+                max-height: 80vh;
+                overflow-y: auto;
+            `;
+
+            document.body.a
